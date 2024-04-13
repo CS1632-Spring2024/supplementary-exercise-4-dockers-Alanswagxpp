@@ -21,6 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -36,13 +37,12 @@ public class D3Test {
 
   @Before
   public void setUp() {
-    driver = new ChromeDriver();
-    js = (JavascriptExecutor) driver;
-    vars = new HashMap<String, Object>();
-
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--headless");
     driver = new ChromeDriver(options);
+    js = (JavascriptExecutor) driver;
+    vars = new HashMap<String, Object>();
+
   }
 
   @After
